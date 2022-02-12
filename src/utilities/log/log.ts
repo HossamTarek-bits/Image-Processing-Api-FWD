@@ -1,9 +1,13 @@
 import { promises as fsPromises } from 'fs';
 import LogType from './LogTypes';
 
-const log = async (type:LogType, text:string) => {
+const log = async (type: LogType, text: string): Promise<void> => {
     const logFile = await fsPromises.open(`${type}Log.txt`, 'a+');
-    logFile.write(`${new Date(Date.now()).toLocaleString('en-GB', { timeZone: 'UTC' })} => ${text}\n`);
+    logFile.write(
+        `${new Date(Date.now()).toLocaleString('en-GB', {
+            timeZone: 'UTC',
+        })} => ${text}\n`,
+    );
     await logFile.close();
 };
 

@@ -1,7 +1,11 @@
 /* eslint-disable require-jsdoc */
-import { DisplayProcessor, SpecReporter, StacktraceOption }
-    from 'jasmine-spec-reporter';
-import SuiteInfo = jasmine.JasmineStartedInfo
+// eslint-disable-next-line import/no-extraneous-dependencies
+import {
+    DisplayProcessor,
+    SpecReporter,
+    StacktraceOption,
+} from 'jasmine-spec-reporter';
+import SuiteInfo = jasmine.JasmineStartedInfo;
 
 class CustomProcessor extends DisplayProcessor {
     // eslint-disable-next-line class-methods-use-this

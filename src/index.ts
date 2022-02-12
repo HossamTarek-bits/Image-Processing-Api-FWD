@@ -1,16 +1,12 @@
-import express from 'express';
-import apiRoute from './api/apiRoute';
+import { Request, Response } from 'express';
+import app from './app';
 
-const app = express();
 const port = 3000;
-
-app.use('/api', apiRoute);
-
-app.get('/', (req, res) => {
+app.get('/', (req: Request, res: Response): void => {
     res.send('Hello World!!');
 });
 
-app.listen(port, () => {
+app.listen(port, (): void => {
     // eslint-disable-next-line no-console
     console.log(`Connect on port ${port}`);
 });
